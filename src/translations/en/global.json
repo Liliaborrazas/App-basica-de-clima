@@ -1,5 +1,8 @@
 {
   "header":{
     "hello_world": "Hello world"
+  },
+  "main":{
+    "select_a_city" : "Select a city"
   }
 }
