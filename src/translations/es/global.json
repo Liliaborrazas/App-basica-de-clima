@@ -1,8 +1,14 @@
 {
   "header":{
-    "hello_world": "Hola Mundo"
+    "weather_480": "Aplicación meteorológica 480"
   },
   "main":{
     "select_a_city": "Selecciona una ciudad"
+  },
+  "weather": {
+    "actual_temperature" : "Temperatura actual: ",
+    "maximum_temperature" : "Temperatura máxima: ",
+    "minimum_temperature" : "Temperatura mínima: ",
+    "search": "Buscar"
   }
 }

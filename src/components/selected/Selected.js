@@ -23,17 +23,17 @@ const Selected = ({setQuery, query, setweather, weather}) => {
 console.log(weather.weather)
   return(
     <>
-     <div className="selected-box">
-        <label htmlFor=''>{t('main.select_a_city')}
-          <select onChange={e => setQuery(e.target.value)} name="city">
-            <option value="Madrid">{t('main.select_a_city')}</option>
-            <option value="Oviedo">Oviedo</option>
-            <option value="Madrid">Madrid</option>
-            <option value="Mar del Plata">Mar del Plata</option>
+     <div className='selected-box'>
+     <div className='selected-select__box'>
+          <select className='selected-select' onChange={e => setQuery(e.target.value)} name="city">
+            <option value='Madrid'>{t('main.select_a_city')}</option>
+            <option value='Oviedo'>Oviedo</option>
+            <option value='Madrid'>Madrid</option>
+            <option value='Mar del Plata'>Mar del Plata</option>
           </select>
-        </label>  
+        </div>  
         <div>
-          <button onClick={weatherData}>Buscar</button>
+          <button className='selected-button' onClick={weatherData}>{t('weather.search')}</button>
         </div>
     </div>
     </>

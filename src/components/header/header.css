@@ -1,0 +1,13 @@
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(147,147,147);
+  font-weight: 300;
+
+}
+.header-title{
+
+}
+.header-language{
+
+}

@@ -157,28 +157,15 @@ import Header from './components/header/Header';
 import Fecha from './components/Fecha';
 import { useTranslation } from 'react-i18next';
 import Selected from './components/selected/Selected';
+import Weather from './components/weather/Weather';
 
-const api ={
-  key: "058cb8e0321f2a75722ed15033adeff5",
-  base: "https://api.openweathermap.org/data/2.5/"
-}
 
 const App =() =>{
   const [t, i18n ] = useTranslation("global")
   const [query, setQuery] = useState('');
   const [weather, setweather] = useState([]);
 
- // const iconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`
-  // const handleChange = ({target})=>{
-  //        const {name, value} = target
-  //        setQuery({
-  //                   ...query,
-  //                   [name] : value 
-  //               });
-  //    }
-
-  
-
+ 
   return (
     <>
       <Header/>
@@ -190,14 +177,7 @@ const App =() =>{
                 <div className="location">{weather.name},{weather.sys.country}</div>
                 <Fecha/>
               </div>
-              <div className="weather-box">
-                <div className="temp-actual">Temperatura actual: {Math.round(weather.main.temp)}°</div>
-                <div className="temp">Temperatura máxima: {Math.round(weather.main.temp_max)}°</div>
-                <div className="temp">Temperatura minima: {Math.round(weather.main.temp_min)}°</div>
-                <div className="weather">{weather.weather[0].main}</div>
-                <div className="weather">{weather.weather[0].description}</div>
-                <img className="weather-icon" src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt='icon'/>  
-              </div>
+             <Weather weather={weather}/>
             </div>
           ) : ('')}
       </main>

@@ -1,8 +1,15 @@
 {
   "header":{
-    "hello_world": "Hello world"
+    "weather_480": "Weather app 480"
   },
   "main":{
     "select_a_city" : "Select a city"
+    
+  },
+  "weather": {
+    "actual_temperature" : "Actual temperature: ",
+    "maximum_temperature" : "Maximum temperature: ",
+    "minimum_temperature" : "Minimum temperature: ",
+    "search": "Search"
   }
 }
