@@ -5,16 +5,16 @@ import './header.css';
 
 const Header = () => {
   const [t, i18n ] = useTranslation("global")
-  const { onChangeLang } = useContext(ContextGral)
+  const { onChangeLang, lang } = useContext(ContextGral)
   
   return(
     <div className='header-container'>
        <div className='header-title'>
           <h1>{t('header.weather_480')}</h1>
        </div> 
-       <div className='header-language'>
-          <button onClick={()=> onChangeLang('es')}>ES</button>
-          <button onClick={()=> onChangeLang('en')}>EN</button>
+       <div>
+          <button className={`header-language__btn ${lang === 'es' ? 'bold' : ''}`} onClick={()=> onChangeLang('es')}>ES</button>
+          <button className={`header-language__btn ${lang === 'en' ? 'bold' : ''}`} onClick={()=> onChangeLang('en')}>EN</button>
        </div>
     </div>
   )

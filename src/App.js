@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import Header from './components/header/Header';
-import Fecha from './components/fecha/Fecha';
+import Date from './components/date/Date';
 import Selected from './components/selected/Selected';
 import Weather from './components/weather/Weather';
 import { ProviderContextGral } from './context/ContextGral';
@@ -19,7 +19,7 @@ const App =() =>{
             <div>
               <div className="location-box">
                 <div className="location">{weather.name},{weather.sys.country}</div>
-                <Fecha/>
+                <Date/>
               </div>
              <Weather weather={weather}/>
             </div>

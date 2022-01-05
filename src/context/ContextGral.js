@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export const ContextGral = createContext();
 
 export const ProviderContextGral = ({children}) => {
-  const [ lang, setLang] = useState()
+  const [ lang, setLang] = useState('en')
   const [t, i18n ] = useTranslation("global")
 
   const onChangeLang = (lang) => {
