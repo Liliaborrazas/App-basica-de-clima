@@ -1,2 +1,9 @@
-App de clima para prueba técnica 480
+Weather App 480.
+
+☀️🌤⛈❄️ es una aplicación web meteorológica que utiliza React, Hooks.
+
+Este proyecto consiste en una pequeña app de clima multi idioma.
+Para que muestre los resultados, hay que elegir la ciudad y pulsar el boton de buscar.
+Esta app muestra el nombre de la ciudad elegida, la temperatura mínima, máxima una pequeña descripción del tiempo y el ícono correspondiente.
+
 
