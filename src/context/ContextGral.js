@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 
@@ -6,7 +6,7 @@ export const ContextGral = createContext();
 
 export const ProviderContextGral = ({children}) => {
   const [ lang, setLang] = useState('en')
-  const [t, i18n ] = useTranslation("global")
+  const [ , i18n ] = useTranslation("global")
   const [ error, setError ] = useState(null);
   const [ loading, setLoading ] = useState(false);
 
@@ -19,9 +19,6 @@ export const ProviderContextGral = ({children}) => {
       setLang('es')
     }
   }
-	useEffect(() => {
-	
-	}, []);
 
 	return (
 		<ContextGral.Provider

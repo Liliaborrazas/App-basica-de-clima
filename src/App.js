@@ -13,18 +13,18 @@ const App =() =>{
     <>
     <ProviderContextGral>
       <Header/>
-      <main>
-          <Selected setQuery={setQuery} query={query} setWeather={setWeather} weather={weather}/>
-          {(weather.weather !== undefined) ? (
-            <div>
-              <div className="location-box">
-                <div className="location">{weather.name},{weather.sys.country}</div>
-                <Date/>
+        <main>
+            <Selected setQuery={setQuery} query={query} setWeather={setWeather} weather={weather}/>
+            {(weather.weather !== undefined) ? (
+              <div>
+                <div className="location-box">
+                  <div className="location">{weather.name},{weather.sys.country}</div>
+                  <Date/>
+                </div>
+              <Weather weather={weather}/>
               </div>
-             <Weather weather={weather}/>
-            </div>
-          ) : ('')}
-      </main>
+            ) : ('')}
+        </main>
     </ProviderContextGral>
     </>
   );

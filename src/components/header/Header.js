@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './header.css';
 
 const Header = () => {
-  const [t, i18n ] = useTranslation("global")
+  const [t ] = useTranslation("global")
   const { onChangeLang, lang } = useContext(ContextGral)
   
   return(

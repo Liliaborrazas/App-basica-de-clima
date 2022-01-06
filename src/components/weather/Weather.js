@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Weather = ({weather}) => {
-  const [t, i18n ] = useTranslation("global")
+  const [ t ] = useTranslation("global")
 
   return(
       <div className="weather-box">
