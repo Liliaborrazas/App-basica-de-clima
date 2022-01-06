@@ -1,36 +1,40 @@
 import React, { useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ContextGral } from '../../context/ContextGral';
+import { Loader } from '../loader/Loader';
+import { Message } from '../message/Message';
+import { helpHttp } from '../../helpers/helpHttp';
+import { api } from '../../utils/api';
 import './selected.css';
-const Selected = ({setQuery, query, setweather, weather}) => {
-  const [t, i18n ] = useTranslation("global")
-  const {lang} = useContext(ContextGral)
-  const api ={
-    key: "058cb8e0321f2a75722ed15033adeff5",
-    base: "https://api.openweathermap.org/data/2.5/"
-  }
+
+const Selected = ({setQuery, query, setWeather, weather}) => {
+  const [t, i18n ] = useTranslation("global");
+  const {lang, loading, setLoading, error, setError} = useContext(ContextGral);
+
+  
+  
   
   // useEffect(() => {
   //   weatherData()
 	// }, [lang]);
 
-  ///////////////////////////////////////
-  ///ver con axios
-  ////////////////////////////////////////
-  ///Falta la clase bold,
   ///Falta el Readme,
-  ///Cambiar nombre a componentes ejemplo el fecha
-  ///Darle una vuelta al context
-  /////////////////////////////////////////
+  let url= `${api.base}weather?q=${query}&units=metric&APPID=${api.key}&lang=${lang}`;
+  
 
   const weatherData = async() => {
-      const data = await fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}&lang=${lang}`)      
-      .then(res => res.json())
-      .then(result => {
-        setweather(result);
+    setLoading(true);
+    helpHttp().get(url).then(res=> {
+      if(!res.err){
+        setWeather(res);
         setQuery('');
-        console.log(result);
+        setError(null);
+      }else{
+        setWeather([]);
+        setError(res)
+      }
       });
+    setLoading(false);
   }
 
   return(
@@ -47,6 +51,8 @@ const Selected = ({setQuery, query, setweather, weather}) => {
         <div>
           <button className='selected-button' onClick={weatherData}>{t('weather.search')}</button>
         </div>
+        {loading && <Loader/>}
+        {error && <Message msg={`Error ${error.status}: ${error.statusText}`} bgColor={'#dc3545'}/>}        
     </div>
     </>
 

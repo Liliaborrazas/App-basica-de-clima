@@ -7,15 +7,15 @@ import { ProviderContextGral } from './context/ContextGral';
 
 const App =() =>{
   const [query, setQuery] = useState('');
-  const [weather, setweather] = useState([]);
+  const [weather, setWeather] = useState([]);
 
   return (
     <>
     <ProviderContextGral>
       <Header/>
       <main>
-          <Selected setQuery={setQuery} query={query} setweather={setweather} weather={weather}/>
-          {(weather.weather != undefined) ? (
+          <Selected setQuery={setQuery} query={query} setWeather={setWeather} weather={weather}/>
+          {(weather.weather !== undefined) ? (
             <div>
               <div className="location-box">
                 <div className="location">{weather.name},{weather.sys.country}</div>
@@ -25,7 +25,6 @@ const App =() =>{
             </div>
           ) : ('')}
       </main>
-
     </ProviderContextGral>
     </>
   );

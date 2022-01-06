@@ -7,6 +7,8 @@ export const ContextGral = createContext();
 export const ProviderContextGral = ({children}) => {
   const [ lang, setLang] = useState('en')
   const [t, i18n ] = useTranslation("global")
+  const [ error, setError ] = useState(null);
+  const [ loading, setLoading ] = useState(false);
 
   const onChangeLang = (lang) => {
 
@@ -23,7 +25,8 @@ export const ProviderContextGral = ({children}) => {
 
 	return (
 		<ContextGral.Provider
-			value={{ onChangeLang, lang, setLang}}
+			value={{ onChangeLang, lang, setLang, error,
+               setError, loading, setLoading}}
 		>
     {children}
 		</ContextGral.Provider>
