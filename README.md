@@ -1,4 +1,4 @@
-Weather App 480.
+Weather App.
 
 ☀️🌤⛈❄️ es una aplicación web meteorológica que utiliza React, Hooks.
 
